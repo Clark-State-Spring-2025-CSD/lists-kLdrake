@@ -18,3 +18,47 @@
 #Player two's highest number is 8 at index 1
 #Player one's lowest number is 1 at index 4
 #Player two's lowest number is 1 at index 5
+
+import random
+
+random.seed()
+
+PlayerOne = []
+
+PlayerTwo = []
+
+for i in range(10):
+    PlayerOne.append(random.randint(1,50))
+    PlayerTwo.append(random.randint(1,50))
+
+print("Player One = ",(PlayerOne))
+print("Player Two = ",(PlayerTwo))
+
+sum1 = []
+
+for p1, p2 in zip(PlayerOne, PlayerTwo):
+    if p1 > p2:
+        sum1.append(1)
+    elif p1 < p2:
+        sum1.append(2)
+
+print("Player One Won ",sum1.count(1)," times")
+print("Player Two Won ",sum1.count(2)," times")
+
+high1 = max(PlayerOne)
+high2 = max(PlayerTwo)
+
+hi1 = PlayerOne.index(high1) + 1
+hi2 = PlayerTwo.index(high2) + 1
+
+print("Player One's highest number is" ,high1, "at index" ,hi1)
+print("Player Two's highest number is" ,high2, "at index" ,hi2)
+
+low1 = min(PlayerOne)
+low2 = min(PlayerTwo)
+
+lo1 = PlayerOne.index(low1) + 1
+lo2 = PlayerTwo.index(low2) + 1
+
+print("Player One's lowest number is" ,low1, "at index" ,lo1)
+print("Player Two's lowest number is" ,low2, "at index" ,lo2)
